@@ -4,8 +4,8 @@
 ####cocoapods安装
 
 ```ruby
-platform :ios, '6.0'
-pod 'LBXAlertAction',:git => 'https://github.com/MxABC/LBXAlertAction.git'
+platform :ios, '7.0'
+pod 'LBXAlertAction',git: 'https://github.com/MxABC/LBXAlertAction.git'
 ```
 
 ####手动导入：
