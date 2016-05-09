@@ -30,12 +30,12 @@
                                    msg:@"提示消息内容"
                       buttonsStatement:@[@"取消",@"确认1",@"确认2",@"确认3",@"确认4",@"确认5",@"确认6"]
                            chooseBlock:^(NSInteger buttonIdx) {
-        
-        NSArray* array = @[@"取消",@"确认1",@"确认2",@"确认3",@"确认4",@"确认5",@"确认6"];
-        
-        //按钮按顺序输出
-        NSLog(@"u choose:%@",array[buttonIdx]);
-    }];
+                               
+                               NSArray* array = @[@"取消",@"确认1",@"确认2",@"确认3",@"确认4",@"确认5",@"确认6"];
+                               
+                               //按钮按顺序输出
+                               NSLog(@"u choose:%@",array[buttonIdx]);
+                           }];
 
 }
 - (IBAction)btnSheet:(id)sender {
@@ -46,10 +46,10 @@
                       destructiveButtonTitle:@"destruct"
                             otherButtonTitle:@[@"items1",@"items2",@"items3"]
                                  chooseBlock:^(NSInteger buttonIdx) {
-        
-        //取消为0，destructiveButtonTitle从1开始，如果输入为nil，则otherButtonTitle从1开始，否则从2开始
-        NSLog(@"%ld",buttonIdx);
-    }];
+                                     
+                                     //取消为0，destructiveButtonTitle从1开始，如果输入为nil，则otherButtonTitle从1开始，否则从2开始
+                                     NSLog(@"%ld",buttonIdx);
+                                 }];
     
     
 }
