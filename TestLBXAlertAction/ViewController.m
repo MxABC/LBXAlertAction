@@ -24,8 +24,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)dosomething
+{
+    
+}
 - (IBAction)btnAlert:(id)sender {
     
+    __weak __typeof(self) weakSelf = self;
     [LBXAlertAction showAlertWithTitle:@"标题"
                                    msg:@"提示消息内容"
                       buttonsStatement:@[@"取消",@"确认1",@"确认2",@"确认3",@"确认4",@"确认5",@"确认6"]
@@ -35,11 +40,14 @@
                                
                                //按钮按顺序输出
                                NSLog(@"u choose:%@",array[buttonIdx]);
+                               
+                               [weakSelf dosomething];
                            }];
 
 }
 - (IBAction)btnSheet:(id)sender {
     
+    __weak __typeof(self) weakSelf = self;
     [LBXAlertAction showActionSheetWithTitle:@"标题"
                                      message:@"ios8系统之后才会显示本消息内容"
                            cancelButtonTitle:@"取消"
@@ -49,9 +57,8 @@
                                      
                                      //取消为0，destructiveButtonTitle从1开始，如果输入为nil，则otherButtonTitle从1开始，否则从2开始
                                      NSLog(@"%ld",buttonIdx);
-                                 }];
-    
-    
+                                     [weakSelf dosomething];
+                                 }];    
 }
 
 
