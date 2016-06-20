@@ -2,20 +2,31 @@
 
 ####cocoapods安装
 
+#####oc版本
 ```ruby
 platform :ios, '6.0'
 pod 'LBXAlertAction'
+```
+
+#####swift版本
+```ruby
+platform :ios, '7.0'
+pod 'AlertAction',git:"https://github.com/MxABC/LBXAlertAction.git"
 ```
 
 ####手动导入：
 将LBXAlertAction文件夹中的所有文件拽入项目中
 导入主头文件：#import "LBXAlertAction.h"
 
+swift:将AlertAction文件夹内所有文件拖入项目中即可
+
 ##使用说明
 
 ###UIAlertView形式示例
 
 ```obj-c
+
+//oc版本
 __weak __typeof(self) weakSelf = self;
 [LBXAlertAction showAlertWithTitle:@"标题"
                                msg:@"提示消息内容"
@@ -28,6 +39,24 @@ __weak __typeof(self) weakSelf = self;
                           NSLog(@"u choose:%@",array[buttonIdx]);
                          [weakSelf dosomething];
                           }];
+```
+
+
+```swift
+//swift版本
+        let items = ["cancel","ok1","ok2"];
+        
+        AlertAction.showAlert(title: "title", message: "message", btnStatements:items ) { (buttonIndex) in
+            
+            
+            let items = ["cancel","ok1","ok2"];
+            
+            print(buttonIndex)
+            
+            print(items[buttonIndex])
+          
+        }
+
 ```
 
 ###UIActionSheet形式示例
@@ -47,3 +76,25 @@ __weak __typeof(self) weakSelf = self;
                            [weakSelf dosomething];
                            }];
 ```
+
+```swift
+//swift版本
+        let destrucitve:String? = "destructive"
+        
+//        let destrucitve:String? = nil
+        
+        AlertAction.showSheet(title: "title", message: "ios8之后才会显示本条信息",  destructiveButtonTitle: destrucitve,cancelButtonTitle: "cancel", otherButtonTitles: ["other1","other2"]) { (buttonIdx, itemTitle) in
+            
+            /*
+             经测试
+             buttonIdx：  destructiveButtonTitle 为0， cancelButtonTitle 为1，otherButtonTitles按顺序增加
+             如果destructiveButtonTitle 传入值为nil,那么 cancelButtonTitle 为0，otherButtonTitles按顺序增加
+             
+             或者按照itemTitle来判断用户点击那个按钮更稳妥
+             */
+            
+            print(buttonIdx)
+            print(itemTitle)
+        }
+
+
