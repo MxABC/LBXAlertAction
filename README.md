@@ -1,4 +1,4 @@
-###UIAlertView、UIActionSheet、UIAlertController封装 objective-c版本
+###UIAlertView、UIActionSheet、UIAlertController封装
 
 ####cocoapods安装
 
