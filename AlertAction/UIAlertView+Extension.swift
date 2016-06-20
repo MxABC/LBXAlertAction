@@ -1,6 +1,6 @@
 //
 //  UIAlertView+Extension.swift
-//  TestSwiftAlertAction
+//  
 //
 //  Created by lbxia on 16/6/17.
 //  Copyright © 2016年 lbx. All rights reserved.
