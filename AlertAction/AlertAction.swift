@@ -44,10 +44,8 @@ public class AlertAction: NSObject
                 
                 let action = UIAlertAction(title: item, style: style, handler: { (action) in
                     
-                    if completion != nil
-                    {
-                        completion!(buttonIndex: index)
-                    }
+                    completion?(buttonIndex: index)
+                    
                 })
                 
                 alert.addAction(action)
@@ -101,14 +99,12 @@ public class AlertAction: NSObject
             
             var idxDiff = 0
             
-            if destructiveButtonTitle != nil
+            if (destructiveButtonTitle != nil)
             {
                 let actionDestructive = UIAlertAction(title: destructiveButtonTitle, style: .Destructive, handler: { (action) in
                     
-                    if completion != nil
-                    {
-                        completion!(buttonIdx:0,itemTitle:action.title)
-                    }
+                    completion?(buttonIdx:0,itemTitle:action.title)
+                    
                 })
                 alertController.addAction(actionDestructive)
                 idxDiff += 1
@@ -118,27 +114,22 @@ public class AlertAction: NSObject
             
             let actionCancel = UIAlertAction(title: cancelButtonTitle, style: .Cancel, handler: { (action) in
                 
-                if completion != nil
-                {
-                    completion!(buttonIdx:idxDiff,itemTitle:action.title)
-                }
+                completion?(buttonIdx:idxDiff,itemTitle:action.title)
             })
             
             alertController.addAction(actionCancel)
     
             
             
-            if otherButtonTitles != nil
+            if (otherButtonTitles != nil)
             {
                 for (idx,item) in otherButtonTitles!.enumerate()
                 {
                     
                     let action = UIAlertAction(title: item, style: .Default, handler: { (action) in
                         
-                        if completion != nil
-                        {
-                            completion!(buttonIdx:idx+idxDiff+1,itemTitle:action.title)
-                        }
+                        completion?(buttonIdx:idx+idxDiff+1,itemTitle:action.title)
+                        
                     })
                     alertController.addAction(action)
                 }
@@ -150,14 +141,14 @@ public class AlertAction: NSObject
         {
             let topVC = AppTopViewController()
             
-            if topVC == nil
+            if (topVC == nil)
             {
                 return
             }
             
             let sheet = UIActionSheet(title: title, delegate: nil, cancelButtonTitle: cancelButtonTitle, destructiveButtonTitle: destructiveButtonTitle)
             
-            if otherButtonTitles != nil
+            if (otherButtonTitles != nil)
             {
                 for item in otherButtonTitles!
                 {

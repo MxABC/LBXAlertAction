@@ -49,11 +49,7 @@ extension UIActionSheet:UIActionSheetDelegate
     {
         let closure = sheetClosure.closure
         
-        if closure != nil
-        {
-            closure!(idx: buttonIndex,btnTitle: self.buttonTitleAtIndex(buttonIndex)!)
-        }
-        
+        closure?(idx: buttonIndex,btnTitle: self.buttonTitleAtIndex(buttonIndex)!)
         objc_removeAssociatedObjects(self);
     }
     

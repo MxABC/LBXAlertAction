@@ -50,15 +50,9 @@ extension UIAlertView
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int)
     {
-       
+        alertClosure.closure?(buttonIndex: buttonIndex)
+        objc_removeAssociatedObjects(self);
         
-        if alertClosure.closure != nil
-        {
-            alertClosure.closure!(buttonIndex: buttonIndex)
-        }
-        
-         objc_removeAssociatedObjects(self);
-
     }
 }
 
