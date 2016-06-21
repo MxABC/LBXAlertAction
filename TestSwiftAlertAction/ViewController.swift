@@ -27,7 +27,9 @@ class ViewController: UIViewController {
         
         let items = ["cancel","ok1","ok2"];
         
-        AlertAction.showAlert(title: "title", message: "message", btnStatements:items ) { (buttonIndex) in
+        AlertAction.showAlert(title: "title", message: "message", btnStatements:items )
+        {
+            (buttonIndex) in
             
             
             let items = ["cancel","ok1","ok2"];

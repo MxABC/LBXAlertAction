@@ -15,6 +15,7 @@
 		7393787C1D1796B300023F2E /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7393787B1D1796B300023F2E /* AlertAction.swift */; };
 		739378991D179ADE00023F2E /* UIAlertView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739378981D179ADE00023F2E /* UIAlertView+Extension.swift */; };
 		7393789E1D17BC6000023F2E /* UIActionSheet+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7393789D1D17BC6000023F2E /* UIActionSheet+Extension.swift */; };
+		739378A21D17EC3A00023F2E /* AlertAction.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 739378A11D17EC3A00023F2E /* AlertAction.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		7393787B1D1796B300023F2E /* AlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
 		739378981D179ADE00023F2E /* UIAlertView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertView+Extension.swift"; sourceTree = "<group>"; };
 		7393789D1D17BC6000023F2E /* UIActionSheet+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActionSheet+Extension.swift"; sourceTree = "<group>"; };
+		739378A11D17EC3A00023F2E /* AlertAction.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AlertAction.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		730BADCD1D13EE7E00EAE2CF = {
 			isa = PBXGroup;
 			children = (
+				739378A11D17EC3A00023F2E /* AlertAction.podspec */,
 				730BADEB1D13EEB400EAE2CF /* AlertAction */,
 				730BADD81D13EE7E00EAE2CF /* TestSwiftAlertAction */,
 				730BADD71D13EE7E00EAE2CF /* Products */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				730BADE41D13EE7E00EAE2CF /* LaunchScreen.storyboard in Resources */,
+				739378A21D17EC3A00023F2E /* AlertAction.podspec in Resources */,
 				730BADE11D13EE7E00EAE2CF /* Assets.xcassets in Resources */,
 				730BADDF1D13EE7E00EAE2CF /* Main.storyboard in Resources */,
 			);

@@ -33,7 +33,7 @@ public class AlertAction: NSObject
      - parameter btnStatements: 按钮，数组存储，第一个默认取消按钮
      - parameter closure:       用户点击闭包返回
      */
-    public static func showAlert( title title:String,message:String,btnStatements:Array<String>,closure:((buttonIndex:Int)->Void)? )
+    public static func showAlert( title title:String,message:String,btnStatements:Array<String>,completion:((buttonIndex:Int)->Void)? )
     {
         if #available(iOS 8.0, *)
         {
@@ -44,9 +44,9 @@ public class AlertAction: NSObject
                 
                 let action = UIAlertAction(title: item, style: style, handler: { (action) in
                     
-                    if closure != nil
+                    if completion != nil
                     {
-                        closure!(buttonIndex: index)
+                        completion!(buttonIndex: index)
                     }
                 })
                 
@@ -71,7 +71,7 @@ public class AlertAction: NSObject
             {
                 alert.addButtonWithTitle(title)
             }
-            alert.show(closure)
+            alert.show(completion)
         }
     }
     
@@ -86,7 +86,7 @@ public class AlertAction: NSObject
      - parameter otherButtonTitles:      其他选项
      - parameter closure:                闭包返回用户点击结果
      */
-    public static func showSheet(title title:String,message:String,destructiveButtonTitle:String?,cancelButtonTitle:String, otherButtonTitles:[String]?,closure: ( (buttonIdx:Int,itemTitle:String?) -> Void )? )
+    public static func showSheet(title title:String,message:String,destructiveButtonTitle:String?,cancelButtonTitle:String, otherButtonTitles:[String]?,completion: ( (buttonIdx:Int,itemTitle:String?) -> Void )? )
     {
         if #available(iOS 8.0, *)
         {
@@ -105,9 +105,9 @@ public class AlertAction: NSObject
             {
                 let actionDestructive = UIAlertAction(title: destructiveButtonTitle, style: .Destructive, handler: { (action) in
                     
-                    if closure != nil
+                    if completion != nil
                     {
-                        closure!(buttonIdx:0,itemTitle:action.title)
+                        completion!(buttonIdx:0,itemTitle:action.title)
                     }
                 })
                 alertController.addAction(actionDestructive)
@@ -118,9 +118,9 @@ public class AlertAction: NSObject
             
             let actionCancel = UIAlertAction(title: cancelButtonTitle, style: .Cancel, handler: { (action) in
                 
-                if closure != nil
+                if completion != nil
                 {
-                    closure!(buttonIdx:idxDiff,itemTitle:action.title)
+                    completion!(buttonIdx:idxDiff,itemTitle:action.title)
                 }
             })
             
@@ -135,9 +135,9 @@ public class AlertAction: NSObject
                     
                     let action = UIAlertAction(title: item, style: .Default, handler: { (action) in
                         
-                        if closure != nil
+                        if completion != nil
                         {
-                            closure!(buttonIdx:idx+idxDiff+1,itemTitle:action.title)
+                            completion!(buttonIdx:idx+idxDiff+1,itemTitle:action.title)
                         }
                     })
                     alertController.addAction(action)
@@ -164,7 +164,7 @@ public class AlertAction: NSObject
                     sheet.addButtonWithTitle(item)
                 }
             }
-           sheet.show(parentView: topVC!.view, closure: closure)
+           sheet.show(parentView: topVC!.view, completion: completion)
         }
     }
     

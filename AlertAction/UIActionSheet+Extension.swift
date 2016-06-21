@@ -37,9 +37,9 @@ extension UIActionSheet:UIActionSheetDelegate
         }
     }
     
-    public func show(parentView parentView:UIView,closure: ((idx:Int,btnTitle:String?)->Void)?)
+    public func show(parentView parentView:UIView,completion: ((idx:Int,btnTitle:String?)->Void)?)
     {
-        sheetClosure = closureKey(closure: closure)
+        sheetClosure = closureKey(closure: completion)
         self.delegate = self
         
         self.showInView(parentView)

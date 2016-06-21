@@ -41,9 +41,9 @@ extension UIAlertView
         }
     }
     
-    public func show(result:((buttonIndex:Int)->Void)?) -> Void
+    public func show(completion:((buttonIndex:Int)->Void)?) -> Void
     {
-        alertClosure = closureKey(closure: result)
+        alertClosure = closureKey(closure: completion)
         self.delegate = self;
         self.show()
     }
