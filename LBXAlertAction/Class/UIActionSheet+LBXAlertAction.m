@@ -16,11 +16,7 @@ static char key;
 
 - (void(^)(NSInteger idx,NSString* buttonTitle))block
 {
-    void(^block)(NSInteger idx,NSString* buttonTitle);
-    block = objc_getAssociatedObject(self, &key);
-   
-    
-    return block;
+    return objc_getAssociatedObject(self, &key);;
 }
 - (void)setBlock:(void(^)(NSInteger idx,NSString* buttonTitle))block
 {
@@ -31,12 +27,6 @@ static char key;
 
 - (void)showInView:(UIView *)view block:(void(^)(NSInteger idx,NSString* buttonTitle))block
 {
-//    if (block) {
-//        objc_removeAssociatedObjects(self);
-//        objc_setAssociatedObject(self, &key, block, OBJC_ASSOCIATION_COPY);
-//        self.delegate = self;
-//    }
-    
     self.block = block;
     
     self.delegate = self;
@@ -47,12 +37,8 @@ static char key;
 // Called when a button is clicked. The view will be automatically dismissed after this call returns
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    void(^block)(NSInteger idx,NSString* buttonTitle);
-//    block = objc_getAssociatedObject(self, &key);
-//    objc_removeAssociatedObjects(self);
-    block = self.block;
-    if (block) {
-        block(buttonIndex,[self buttonTitleAtIndex:buttonIndex]);
+    if (self.block) {
+        self.block(buttonIndex,[self buttonTitleAtIndex:buttonIndex]);
     }
     
      objc_removeAssociatedObjects(self);
