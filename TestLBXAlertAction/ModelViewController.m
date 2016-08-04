@@ -21,7 +21,16 @@
 }
 - (IBAction)alertaction:(id)sender {
     
-    [self btnAlert:nil];
+    [self btnSheet:nil];
+}
+- (IBAction)back:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)dealloc
+{
+    NSLog(@"ModelViewController dealloc");
 }
 
 - (void)dosomething

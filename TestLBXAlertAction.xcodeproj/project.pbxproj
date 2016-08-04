@@ -21,6 +21,7 @@
 		7393789C1D179B1700023F2E /* LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7393789B1D179B1700023F2E /* LBXAlertAction.m */; };
 		73AB31061D52DD150047ED0E /* ModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AB31041D52DD150047ED0E /* ModelViewController.m */; };
 		73AB31071D52DD150047ED0E /* ModelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AB31051D52DD150047ED0E /* ModelViewController.xib */; };
+		73AB310A1D52E9030047ED0E /* UIWindow+LBXHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AB31091D52E9030047ED0E /* UIWindow+LBXHierarchy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		73AB31031D52DD150047ED0E /* ModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelViewController.h; sourceTree = "<group>"; };
 		73AB31041D52DD150047ED0E /* ModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelViewController.m; sourceTree = "<group>"; };
 		73AB31051D52DD150047ED0E /* ModelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModelViewController.xib; sourceTree = "<group>"; };
+		73AB31081D52E9030047ED0E /* UIWindow+LBXHierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+LBXHierarchy.h"; sourceTree = "<group>"; };
+		73AB31091D52E9030047ED0E /* UIWindow+LBXHierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+LBXHierarchy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 		482EA74E1BF9D05A004AC1F5 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				73AB31081D52E9030047ED0E /* UIWindow+LBXHierarchy.h */,
+				73AB31091D52E9030047ED0E /* UIWindow+LBXHierarchy.m */,
 				739378911D179AA900023F2E /* UIAlertView+LBXAlertAction.h */,
 				739378921D179AA900023F2E /* UIAlertView+LBXAlertAction.m */,
 				48B609651C4C740000813C96 /* UIAlertController+supportedInterfaceOrientations.h */,
@@ -206,6 +211,7 @@
 				48AD5E971BF42DCD00999524 /* ViewController.m in Sources */,
 				48AD5E941BF42DCD00999524 /* AppDelegate.m in Sources */,
 				482EA7551BF9D05A004AC1F5 /* UIActionSheet+LBXAlertAction.m in Sources */,
+				73AB310A1D52E9030047ED0E /* UIWindow+LBXHierarchy.m in Sources */,
 				73AB31061D52DD150047ED0E /* ModelViewController.m in Sources */,
 				7393789C1D179B1700023F2E /* LBXAlertAction.m in Sources */,
 				48AD5EB41BF4314B00999524 /* README.md in Sources */,

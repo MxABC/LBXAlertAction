@@ -16,12 +16,10 @@ public class AlertAction: NSObject
      
      - returns: 最上层控制器
      */
-    public static func AppTopViewController() -> UIViewController? {
-        var topVC = UIApplication.sharedApplication().keyWindow?.rootViewController
-        while topVC?.presentedViewController != nil {
-            topVC = topVC?.presentedViewController
-        }
-        return topVC
+    public static func currentViewController() -> UIViewController? {
+        
+        
+        return UIApplication.sharedApplication().keyWindow?.currentVC()
     }
     
     
@@ -51,10 +49,10 @@ public class AlertAction: NSObject
                 alert.addAction(action)
             }
             
-            let topVC = AppTopViewController()
-            if  topVC != nil
+            
+            if let topVC = currentViewController()
             {
-                topVC!.presentViewController(alert, animated: true, completion: nil)
+                topVC.presentViewController(alert, animated: true, completion: nil)
             }
         }
         else
@@ -88,10 +86,9 @@ public class AlertAction: NSObject
     {
         if #available(iOS 8.0, *)
         {
-            let topVC = AppTopViewController()
+             let topVC = currentViewController()
             
-            if topVC == nil
-            {
+            if (topVC == nil) {
                 return
             }
             
@@ -139,7 +136,7 @@ public class AlertAction: NSObject
         }
         else
         {
-            let topVC = AppTopViewController()
+            let topVC = currentViewController()
             
             if (topVC == nil)
             {

@@ -12,8 +12,6 @@ import UIKit
 import ObjectiveC
 
 
-
-
 // MARK: - 使用oc关联
 extension UIAlertView
 {
@@ -28,7 +26,7 @@ extension UIAlertView
             self.closure = closure
         }
     }
-
+    
     private var alertClosure:closureKey
     {
         get

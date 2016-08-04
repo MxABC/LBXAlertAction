@@ -16,6 +16,7 @@
 		739378991D179ADE00023F2E /* UIAlertView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739378981D179ADE00023F2E /* UIAlertView+Extension.swift */; };
 		7393789E1D17BC6000023F2E /* UIActionSheet+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7393789D1D17BC6000023F2E /* UIActionSheet+Extension.swift */; };
 		739378A21D17EC3A00023F2E /* AlertAction.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 739378A11D17EC3A00023F2E /* AlertAction.podspec */; };
+		73AB310C1D52ECB40047ED0E /* UIWindow+LBXHierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AB310B1D52ECB40047ED0E /* UIWindow+LBXHierarchy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		739378981D179ADE00023F2E /* UIAlertView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertView+Extension.swift"; sourceTree = "<group>"; };
 		7393789D1D17BC6000023F2E /* UIActionSheet+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActionSheet+Extension.swift"; sourceTree = "<group>"; };
 		739378A11D17EC3A00023F2E /* AlertAction.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AlertAction.podspec; sourceTree = "<group>"; };
+		73AB310B1D52ECB40047ED0E /* UIWindow+LBXHierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+LBXHierarchy.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		730BADEB1D13EEB400EAE2CF /* AlertAction */ = {
 			isa = PBXGroup;
 			children = (
+				73AB310B1D52ECB40047ED0E /* UIWindow+LBXHierarchy.swift */,
 				739378981D179ADE00023F2E /* UIAlertView+Extension.swift */,
 				7393787B1D1796B300023F2E /* AlertAction.swift */,
 				7393789D1D17BC6000023F2E /* UIActionSheet+Extension.swift */,
@@ -158,6 +161,7 @@
 			files = (
 				7393787C1D1796B300023F2E /* AlertAction.swift in Sources */,
 				730BADDC1D13EE7E00EAE2CF /* ViewController.swift in Sources */,
+				73AB310C1D52ECB40047ED0E /* UIWindow+LBXHierarchy.swift in Sources */,
 				730BADDA1D13EE7E00EAE2CF /* AppDelegate.swift in Sources */,
 				739378991D179ADE00023F2E /* UIAlertView+Extension.swift in Sources */,
 				7393789E1D17BC6000023F2E /* UIActionSheet+Extension.swift in Sources */,
