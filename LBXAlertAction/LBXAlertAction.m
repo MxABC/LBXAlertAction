@@ -126,9 +126,25 @@
      }];
 }
 
++ (UIViewController *)getPresentedViewController
+{
+    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UIViewController *topVC = nil;
+    if (appRootVC.presentedViewController) {
+        topVC = appRootVC.presentedViewController;
+    }
+    
+    return topVC;
+}
 
 + (UIViewController*)getTopViewController
 {
+    UIViewController *presentVC = nil;
+    if ( (presentVC = [[self class]getPresentedViewController]) ) {
+        
+        return presentVC;
+    }
+    
     UIViewController *result = nil;
     
     
@@ -155,6 +171,9 @@
         result = nextResponder;
     else
         result = window.rootViewController;
+    
+    
+    NSLog(@"VC:%@",result.class);
     
     return result;
 }

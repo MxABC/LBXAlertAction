@@ -19,6 +19,8 @@
 		48B609671C4C740000813C96 /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B609661C4C740000813C96 /* UIAlertController+supportedInterfaceOrientations.m */; };
 		739378971D179AA900023F2E /* UIAlertView+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 739378921D179AA900023F2E /* UIAlertView+LBXAlertAction.m */; };
 		7393789C1D179B1700023F2E /* LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7393789B1D179B1700023F2E /* LBXAlertAction.m */; };
+		73AB31061D52DD150047ED0E /* ModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AB31041D52DD150047ED0E /* ModelViewController.m */; };
+		73AB31071D52DD150047ED0E /* ModelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AB31051D52DD150047ED0E /* ModelViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,9 @@
 		739378921D179AA900023F2E /* UIAlertView+LBXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+LBXAlertAction.m"; sourceTree = "<group>"; };
 		7393789A1D179B1700023F2E /* LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXAlertAction.h; sourceTree = "<group>"; };
 		7393789B1D179B1700023F2E /* LBXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXAlertAction.m; sourceTree = "<group>"; };
+		73AB31031D52DD150047ED0E /* ModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelViewController.h; sourceTree = "<group>"; };
+		73AB31041D52DD150047ED0E /* ModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelViewController.m; sourceTree = "<group>"; };
+		73AB31051D52DD150047ED0E /* ModelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModelViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,9 @@
 				48AD5E9D1BF42DCD00999524 /* LaunchScreen.storyboard */,
 				48AD5EA01BF42DCD00999524 /* Info.plist */,
 				48AD5E8F1BF42DCD00999524 /* Supporting Files */,
+				73AB31031D52DD150047ED0E /* ModelViewController.h */,
+				73AB31041D52DD150047ED0E /* ModelViewController.m */,
+				73AB31051D52DD150047ED0E /* ModelViewController.xib */,
 			);
 			path = TestLBXAlertAction;
 			sourceTree = "<group>";
@@ -183,6 +191,7 @@
 				48AD5E9C1BF42DCD00999524 /* Assets.xcassets in Resources */,
 				48AD5E9A1BF42DCD00999524 /* Main.storyboard in Resources */,
 				48AD5EB31BF4314B00999524 /* LBXAlertAction.podspec in Resources */,
+				73AB31071D52DD150047ED0E /* ModelViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +206,7 @@
 				48AD5E971BF42DCD00999524 /* ViewController.m in Sources */,
 				48AD5E941BF42DCD00999524 /* AppDelegate.m in Sources */,
 				482EA7551BF9D05A004AC1F5 /* UIActionSheet+LBXAlertAction.m in Sources */,
+				73AB31061D52DD150047ED0E /* ModelViewController.m in Sources */,
 				7393789C1D179B1700023F2E /* LBXAlertAction.m in Sources */,
 				48AD5EB41BF4314B00999524 /* README.md in Sources */,
 				739378971D179AA900023F2E /* UIAlertView+LBXAlertAction.m in Sources */,

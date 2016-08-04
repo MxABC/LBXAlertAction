@@ -1,35 +1,34 @@
 //
-//  ViewController.m
+//  ModelViewController.m
 //  TestLBXAlertAction
 //
-//  Created by lbxia on 15/11/12.
-//  Copyright © 2015年 lbxia. All rights reserved.
+//  Created by lbxia on 16/8/4.
+//  Copyright © 2016年 csce. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "LBXAlertAction.h"
 #import "ModelViewController.h"
+#import "LBXAlertAction.h"
 
-@interface ViewController ()
+@interface ModelViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ModelViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view from its nib.
+}
+- (IBAction)alertaction:(id)sender {
+    
+    [self btnAlert:nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 - (void)dosomething
 {
     
 }
-- (IBAction)btnAlert:(id)sender {
+- (void)btnAlert:(id)sender {
     
     __weak __typeof(self) weakSelf = self;
     [LBXAlertAction showAlertWithTitle:@"标题"
@@ -44,9 +43,9 @@
                                
                                [weakSelf dosomething];
                            }];
-
+    
 }
-- (IBAction)btnSheet:(id)sender {
+- (void)btnSheet:(id)sender {
     
     __weak __typeof(self) weakSelf = self;
     [LBXAlertAction showActionSheetWithTitle:@"标题"
@@ -59,14 +58,7 @@
                                      //取消为0，destructiveButtonTitle从1开始，如果输入为nil，则otherButtonTitle从1开始，否则从2开始
                                      NSLog(@"%ld",buttonIdx);
                                      [weakSelf dosomething];
-                                 }];    
-}
-
-- (IBAction)modelVC:(id)sender {
-    
-    ModelViewController *vc = [[ModelViewController alloc]init];
-    
-    [self presentViewController:vc animated:YES completion:nil];
+                                 }];
 }
 
 
