@@ -122,8 +122,9 @@
     
     //UIActionSheet
     UIView *view = [self getTopViewController].view;
-    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:destructiveButtonTitle otherButtonTitles:nil, nil];
+    UIActionSheet *sheet = nil;
     
+    NSInteger count = argsArray.count;
     
     if (cancelString) {
         [argsArray removeObject:cancelString];
@@ -131,32 +132,64 @@
     if (destructiveButtonTitle) {
         [argsArray removeObject:destructiveButtonTitle];
     }
-    
-    for (NSString* title in argsArray)
+    if (argsArray.count == 0)
     {
-        [sheet addButtonWithTitle:title];
+        sheet =  [[UIActionSheet alloc]initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:destructiveButtonTitle otherButtonTitles:nil, nil];
     }
     
-    __block BOOL isDestructiveExist = destructiveButtonTitle ? YES:NO;
+    switch (argsArray.count) {
+        case 0:
+            sheet =  [[UIActionSheet alloc]initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:destructiveButtonTitle otherButtonTitles:nil, nil];
+            break;
+            
+        case 1:
+            sheet =  [[UIActionSheet alloc]initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:destructiveButtonTitle otherButtonTitles:argsArray[0], nil];
+            break;
+            
+        case 2:
+            sheet =  [[UIActionSheet alloc]initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:destructiveButtonTitle otherButtonTitles:argsArray[0],argsArray[1], nil];
+            break;
+        case 3:
+            sheet =  [[UIActionSheet alloc]initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:destructiveButtonTitle otherButtonTitles:argsArray[0],argsArray[1],argsArray[2], nil];
+            break;
+            
+        case 4:
+            sheet =  [[UIActionSheet alloc]initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:destructiveButtonTitle otherButtonTitles:argsArray[0],argsArray[1],argsArray[2],argsArray[3], nil];
+            break;
+            
+        case 5:
+            sheet =  [[UIActionSheet alloc]initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:destructiveButtonTitle otherButtonTitles:argsArray[0],argsArray[1],argsArray[2],argsArray[3],argsArray[4], nil];
+            break;
+            
+        case 6:
+            sheet =  [[UIActionSheet alloc]initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:destructiveButtonTitle otherButtonTitles:argsArray[0],argsArray[1],argsArray[2],argsArray[3],argsArray[4],argsArray[5], nil];
+            break;
+            
+        case 7:
+            sheet =  [[UIActionSheet alloc]initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:destructiveButtonTitle otherButtonTitles:argsArray[0],argsArray[1],argsArray[2],argsArray[3],argsArray[4],argsArray[5],argsArray[6], nil];
+            break;
+            
+        case 8:
+            sheet =  [[UIActionSheet alloc]initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:destructiveButtonTitle otherButtonTitles:argsArray[0],argsArray[1],argsArray[2],argsArray[3],argsArray[4],argsArray[5],argsArray[6],argsArray[7], nil];
+            break;
+            
+        default:
+            break;
+    }
     
     [sheet showInView:view block:^(NSInteger buttonIdx,NSString* buttonTitle)
      {
          NSInteger idx = buttonIdx;
          
-         if (isDestructiveExist ) {
-             
-             switch (idx) {
-                 case 0:
-                     idx = 1;
-                     break;
-                 case 1:
-                     idx = 0;
-                     break;
-                     
-                 default:
-                     break;
-             }
+         if (idx == count -1) {
+             idx = 0;
          }
+         else
+         {
+             ++idx;
+         }
+         
+         NSLog(@"idx:%ld",idx);
          
          if (block) {
              block(idx);
