@@ -52,7 +52,7 @@
     [LBXAlertAction showActionSheetWithTitle:@"标题"
                                      message:@"ios8系统之后才会显示本消息内容"
                            cancelButtonTitle:@"取消"
-                      destructiveButtonTitle:@"destruct"
+                      destructiveButtonTitle:@"destructive"
                             otherButtonTitle:@[@"items1",@"items2",@"items3"]
                                  chooseBlock:^(NSInteger buttonIdx) {
                                      
