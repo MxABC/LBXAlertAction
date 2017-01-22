@@ -119,6 +119,7 @@
 				TargetAttributes = {
 					730BADD51D13EE7E00EAE2CF = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -283,6 +284,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbx.TestSwiftAlertAction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -296,6 +298,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbx.TestSwiftAlertAction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

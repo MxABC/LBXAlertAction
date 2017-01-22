@@ -15,19 +15,19 @@ import ObjectiveC
 // MARK: - 使用oc关联
 extension UIAlertView
 {
-    private static var alertKey = "alertKey"
+    fileprivate static var alertKey = "alertKey"
     
     internal class closureKey : NSObject
     {
-        let closure:((buttonIndex:Int) -> Void)?
+        let closure:((_ buttonIndex:Int) -> Void)?
         
-        init( closure:((buttonIndex:Int)->Void)? ) {
+        init( closure:((_ buttonIndex:Int)->Void)? ) {
             
             self.closure = closure
         }
     }
     
-    private var alertClosure:closureKey
+    fileprivate var alertClosure:closureKey
     {
         get
         {
@@ -39,16 +39,16 @@ extension UIAlertView
         }
     }
     
-    public func show(completion:((buttonIndex:Int)->Void)?) -> Void
+    public func show(_ completion:((_ buttonIndex:Int)->Void)?) -> Void
     {
         alertClosure = closureKey(closure: completion)
         self.delegate = self;
         self.show()
     }
     
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int)
+    func alertView(_ alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int)
     {
-        alertClosure.closure?(buttonIndex: buttonIndex)
+        alertClosure.closure?(buttonIndex)
         objc_removeAssociatedObjects(self);
         
     }

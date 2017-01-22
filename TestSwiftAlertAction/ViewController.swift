@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    @IBAction func testAlertView(sender: AnyObject)
+    @IBAction func testAlertView(_ sender: AnyObject)
     {
 
 //        let alert = UIAlertView(title: "title", message: "message", delegate: nil, cancelButtonTitle: "cance", otherButtonTitles: "sure", "sure2")
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func testSheetView(sender: AnyObject)
+    @IBAction func testSheetView(_ sender: AnyObject)
     {
         let destrucitve:String? = "destructive"
         
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
 
     }
     
-    func alertResult(buttonIndex:Int) -> Void
+    func alertResult(_ buttonIndex:Int) -> Void
     {
         
         

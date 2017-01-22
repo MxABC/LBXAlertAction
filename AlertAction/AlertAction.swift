@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-public class AlertAction: NSObject
+open class AlertAction: NSObject
 {
     /**
      获取最上层控制器
      
      - returns: 最上层控制器
      */
-    public static func currentViewController() -> UIViewController? {
+    open static func currentViewController() -> UIViewController? {
         
         
-        return UIApplication.sharedApplication().keyWindow?.currentVC()
+        return UIApplication.shared.keyWindow?.currentVC()
     }
     
     
@@ -31,18 +31,18 @@ public class AlertAction: NSObject
      - parameter btnStatements: 按钮，数组存储，第一个默认取消按钮
      - parameter closure:       用户点击闭包返回
      */
-    public static func showAlert( title title:String,message:String,btnStatements:Array<String>,completion:((buttonIndex:Int)->Void)? )
+    open static func showAlert( title:String,message:String,btnStatements:Array<String>,completion:((_ buttonIndex:Int)->Void)? )
     {
         if #available(iOS 8.0, *)
         {
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-            for (index,item) in btnStatements.enumerate() {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            for (index,item) in btnStatements.enumerated() {
                 
-                let style:UIAlertActionStyle = (index != 0) ? .Default:.Cancel
+                let style:UIAlertActionStyle = (index != 0) ? .default:.cancel
                 
                 let action = UIAlertAction(title: item, style: style, handler: { (action) in
                     
-                    completion?(buttonIndex: index)
+                    completion?(index)
                     
                 })
                 
@@ -52,7 +52,7 @@ public class AlertAction: NSObject
             
             if let topVC = currentViewController()
             {
-                topVC.presentViewController(alert, animated: true, completion: nil)
+                topVC.present(alert, animated: true, completion: nil)
             }
         }
         else
@@ -62,10 +62,10 @@ public class AlertAction: NSObject
             let alert = UIAlertView(title: title, message: message, delegate: nil, cancelButtonTitle: btnStatements[0])
             
             var bs = btnStatements
-            bs.removeAtIndex(0)
+            bs.remove(at: 0)
             for title in bs
             {
-                alert.addButtonWithTitle(title)
+                alert.addButton(withTitle: title)
             }
             alert.show(completion)
         }
@@ -82,7 +82,7 @@ public class AlertAction: NSObject
      - parameter otherButtonTitles:      其他选项
      - parameter closure:                闭包返回用户点击结果
      */
-    public static func showSheet(title title:String,message:String,destructiveButtonTitle:String?,cancelButtonTitle:String, otherButtonTitles:[String]?,completion: ( (buttonIdx:Int,itemTitle:String?) -> Void )? )
+    open static func showSheet(title:String,message:String,destructiveButtonTitle:String?,cancelButtonTitle:String, otherButtonTitles:[String]?,completion: ( (_ buttonIdx:Int,_ itemTitle:String?) -> Void )? )
     {
         if #available(iOS 8.0, *)
         {
@@ -92,15 +92,15 @@ public class AlertAction: NSObject
                 return
             }
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
             
             var idxDiff = 0
             
             if (destructiveButtonTitle != nil)
             {
-                let actionDestructive = UIAlertAction(title: destructiveButtonTitle, style: .Destructive, handler: { (action) in
+                let actionDestructive = UIAlertAction(title: destructiveButtonTitle, style: .destructive, handler: { (action) in
                     
-                    completion?(buttonIdx:0,itemTitle:action.title)
+                    completion?(0,action.title)
                     
                 })
                 alertController.addAction(actionDestructive)
@@ -109,9 +109,9 @@ public class AlertAction: NSObject
             
             
             
-            let actionCancel = UIAlertAction(title: cancelButtonTitle, style: .Cancel, handler: { (action) in
+            let actionCancel = UIAlertAction(title: cancelButtonTitle, style: .cancel, handler: { (action) in
                 
-                completion?(buttonIdx:idxDiff,itemTitle:action.title)
+                completion?(idxDiff,action.title)
             })
             
             alertController.addAction(actionCancel)
@@ -120,18 +120,18 @@ public class AlertAction: NSObject
             
             if (otherButtonTitles != nil)
             {
-                for (idx,item) in otherButtonTitles!.enumerate()
+                for (idx,item) in otherButtonTitles!.enumerated()
                 {
                     
-                    let action = UIAlertAction(title: item, style: .Default, handler: { (action) in
+                    let action = UIAlertAction(title: item, style: .default, handler: { (action) in
                         
-                        completion?(buttonIdx:idx+idxDiff+1,itemTitle:action.title)
+                        completion?(idx+idxDiff+1,action.title)
                         
                     })
                     alertController.addAction(action)
                 }
             }
-            topVC! .presentViewController(alertController, animated: true, completion: nil)
+            topVC! .present(alertController, animated: true, completion: nil)
             
         }
         else
@@ -149,7 +149,7 @@ public class AlertAction: NSObject
             {
                 for item in otherButtonTitles!
                 {
-                    sheet.addButtonWithTitle(item)
+                    sheet.addButton(withTitle: item)
                 }
             }
            sheet.show(parentView: topVC!.view, completion: completion)

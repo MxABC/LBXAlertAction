@@ -13,19 +13,19 @@ import ObjectiveC
 // MARK: - 使用oc关联
 extension UIActionSheet:UIActionSheetDelegate
 {
-    private static var alertKey = "alertKey"
+    fileprivate static var alertKey = "alertKey"
     
     internal class closureKey:NSObject
     {
-        let closure:((idx:Int,btnTitle:String?) -> Void )?
+        let closure:((_ idx:Int,_ btnTitle:String?) -> Void )?
         
-        init( closure:((idx:Int,btnTitle:String?) -> Void )? ) {
+        init( closure:((_ idx:Int,_ btnTitle:String?) -> Void )? ) {
             
             self.closure = closure
         }
     }
     
-    private var sheetClosure:closureKey
+    fileprivate var sheetClosure:closureKey
     {
         get
         {  
@@ -37,19 +37,19 @@ extension UIActionSheet:UIActionSheetDelegate
         }
     }
     
-    public func show(parentView parentView:UIView,completion: ((idx:Int,btnTitle:String?)->Void)?)
+    public func show(parentView:UIView,completion: ((_ idx:Int,_ btnTitle:String?)->Void)?)
     {
         sheetClosure = closureKey(closure: completion)
         self.delegate = self
         
-        self.showInView(parentView)
+        self.show(in: parentView)
     }
     
-    public func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int)
+    public func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int)
     {
         let closure = sheetClosure.closure
         
-        closure?(idx: buttonIndex,btnTitle: self.buttonTitleAtIndex(buttonIndex)!)
+        closure?(buttonIndex,self.buttonTitle(at: buttonIndex)!)
         objc_removeAssociatedObjects(self);
     }
     
