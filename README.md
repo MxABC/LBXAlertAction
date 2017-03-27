@@ -1,28 +1,28 @@
-###UIAlertView、UIActionSheet、UIAlertController封装
+### UIAlertView、UIActionSheet、UIAlertController封装
 
-####cocoapods安装
+#### cocoapods安装
 
-#####oc版本
+##### oc版本
 ```ruby
 platform :ios, '6.0'
 pod 'LBXAlertAction'
 ```
 
-#####swift版本
+##### swift版本
 ```ruby
 platform :ios, '7.0'
 pod 'AlertAction',git:"https://github.com/MxABC/LBXAlertAction.git"
 ```
 
-####手动导入：
+#### 手动导入：
 将LBXAlertAction文件夹中的所有文件拽入项目中
 导入主头文件：#import "LBXAlertAction.h"
 
 swift:将AlertAction文件夹内所有文件拖入项目中即可
 
-##使用说明
+## 使用说明
 
-###UIAlertView形式示例
+### UIAlertView形式示例
 
 ```obj-c
 
@@ -59,7 +59,7 @@ __weak __typeof(self) weakSelf = self;
 
 ```
 
-###UIActionSheet形式示例
+### UIActionSheet形式示例
 
 ```obj-c
 __weak __typeof(self) weakSelf = self;
