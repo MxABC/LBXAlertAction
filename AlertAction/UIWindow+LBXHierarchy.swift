@@ -1,3 +1,10 @@
+//
+//  AlertAction.swift
+//
+//
+//  Created by lbxia on 16/6/20.
+//  Copyright © 2016年 lbx. All rights reserved.
+//
 
 import UIKit
 
@@ -16,12 +23,23 @@ public extension UIWindow {
         return topController
     }
     
-    /** @return Returns the topViewController in stack of topMostController.    */
-    public func currentVC()->UIViewController? {
+    /** @return Returns the topViewController in stack of topController.    */
+    public func currentTopViewController()->UIViewController? {
         
         var currentViewController = topController()
         
-        while currentViewController != nil && currentViewController is UINavigationController && (currentViewController as! UINavigationController).topViewController != nil {
+        while currentViewController != nil
+            && currentViewController is UITabBarController
+            && (currentViewController as! UITabBarController).selectedViewController != nil
+        {
+            currentViewController = (currentViewController as! UITabBarController).selectedViewController
+        }
+        
+        while currentViewController != nil
+            && currentViewController is UINavigationController
+            && (currentViewController as! UINavigationController).topViewController != nil
+        {
+                
             currentViewController = (currentViewController as! UINavigationController).topViewController
         }
 

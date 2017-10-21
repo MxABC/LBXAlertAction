@@ -61,8 +61,9 @@
     
     [alertView showWithBlock:^(NSInteger buttonIdx)
      {
-         
-         block(buttonIdx);
+         if (block) {
+             block(buttonIdx);
+         }
      }];
 }
 
@@ -71,7 +72,7 @@
 {
     UIWindow * window = [[UIApplication sharedApplication] keyWindow];
     
-    return window.currentViewController;
+    return window.currentTopViewController;
 }
 
 

@@ -18,8 +18,7 @@ open class AlertAction: NSObject
      */
     open static func currentViewController() -> UIViewController? {
         
-        
-        return UIApplication.shared.keyWindow?.currentVC()
+        return UIApplication.shared.keyWindow?.currentTopViewController()
     }
     
     

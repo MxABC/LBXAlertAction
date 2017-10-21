@@ -1,50 +1,24 @@
 //
-//  UIWindow+Hierarchy.h
-// https://github.com/hackiftekhar/IQKeyboardManager
-// Copyright (c) 2013-16 Iftekhar Qurashi.
+//  UIWindow+LBXHierarchy
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
+//  Created by lbxia on 15/10/27.
+//  Copyright © 2015年 lbxia. All rights reserved.
 //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
 
-#import <UIKit/UIWindow.h>
+#import <UIKit/UIKit.h>
 
 @class UIViewController;
 
 /**
  UIWindow hierarchy category.
- 代码从IQKeyboardManager复制
- category名称修改，以防用到IQKeyboardManager的冲突
  */
 @interface UIWindow (LBXHierarchy)
 
-///----------------------
-/// @name viewControllers
-///----------------------
 
-/**
- Returns the current Top Most ViewController in hierarchy.
- */
-@property (nullable, nonatomic, readonly, strong) UIViewController *topMostController;
+//获取当前显示
+- (UIViewController*)currentTopViewController;
 
-/**
- Returns the topViewController in stack of topMostController.
- */
-@property (nullable, nonatomic, readonly, strong) UIViewController *currentViewController;
 
 
 @end
