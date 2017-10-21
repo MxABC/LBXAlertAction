@@ -10,8 +10,8 @@ pod 'LBXAlertAction'
 
 ##### swift版本
 ```ruby
-platform :ios, '7.0'
-pod 'AlertAction',git:"https://github.com/MxABC/LBXAlertAction.git"
+platform :ios, '8.0'
+pod 'AlertAction'
 ```
 
 #### 手动导入：
