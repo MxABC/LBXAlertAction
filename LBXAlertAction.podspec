@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'LBXAlertAction/**/*.{m,h}'
   s.public_header_files = 'LBXAlertAction/LBXAlertAction.h'
-
+  s.ios.frameworks = 'Foundation', 'UIKit'
   s.requires_arc = true
 
 end
