@@ -15,31 +15,46 @@
     UIViewController *topController = [self rootViewController];
     
     //  Getting topMost ViewController
-    while ([topController presentedViewController])	topController = [topController presentedViewController];
-	
+    while ([topController presentedViewController])
+        topController = [topController presentedViewController];
+    
     //  Returning topMost ViewController
     return topController;
+}
+
+- (UIViewController*)presentedWithController:(UIViewController*)vc
+{
+    while ([vc presentedViewController])
+        vc = vc.presentedViewController;
+    return vc;
 }
 
 
 - (UIViewController*)currentTopViewController
 {
-    UIViewController *currentTopViewController = [self topRootController];
+    UIViewController *currentViewController = [self topRootController];
     
-    if ([currentTopViewController isKindOfClass:[UITabBarController class]]
-        && ((UITabBarController*)currentTopViewController).selectedViewController != nil )
+    if ([currentViewController isKindOfClass:[UITabBarController class]]
+        && ((UITabBarController*)currentViewController).selectedViewController != nil )
     {
-        currentTopViewController = ((UITabBarController*)currentTopViewController).selectedViewController;
+        currentViewController = ((UITabBarController*)currentViewController).selectedViewController;
     }
     
-    while ([currentTopViewController isKindOfClass:[UINavigationController class]]
-           && [(UINavigationController*)currentTopViewController topViewController])
+    currentViewController = [self presentedWithController:currentViewController];
+    
+    while ([currentViewController isKindOfClass:[UINavigationController class]]
+           && [(UINavigationController*)currentViewController topViewController])
     {
-        currentTopViewController = [(UINavigationController*)currentTopViewController topViewController];
+        currentViewController = [(UINavigationController*)currentViewController topViewController];
+        currentViewController = [self presentedWithController:currentViewController];
+        
     }
     
-    return currentTopViewController;
+    
+    currentViewController = [self presentedWithController:currentViewController];
+    
+    
+    return currentViewController;
 }
-
 
 @end

@@ -26,7 +26,7 @@
     NSMutableArray* argsArray = [[NSMutableArray alloc] initWithArray:arrayItems];
  
     
-    if ( [LBXAlertAction isIosVersion8AndAfter])
+    if ( @available(iOS 8,*) )
     {
         //UIAlertController style
         
@@ -45,26 +45,26 @@
         
         [[LBXAlertAction getTopViewController] presentViewController:alertController animated:YES completion:nil];
         
-        return;
     }
-    
-    //UIAlertView style
-    
-    UIAlertView* alertView = [[UIAlertView alloc]initWithTitle:title message:message delegate:nil cancelButtonTitle:argsArray[0] otherButtonTitles:nil, nil];
-    
-    [argsArray removeObject:argsArray[0]];
-    for (NSString *buttonTitle in argsArray) {
+    else{
+        //UIAlertView style
         
-        NSLog(@"buttonTitle:%@",buttonTitle);
-        [alertView addButtonWithTitle:buttonTitle];
+        UIAlertView* alertView = [[UIAlertView alloc]initWithTitle:title message:message delegate:nil cancelButtonTitle:argsArray[0] otherButtonTitles:nil, nil];
+        
+        [argsArray removeObject:argsArray[0]];
+        for (NSString *buttonTitle in argsArray) {
+            
+            NSLog(@"buttonTitle:%@",buttonTitle);
+            [alertView addButtonWithTitle:buttonTitle];
+        }
+        
+        [alertView showWithBlock:^(NSInteger buttonIdx)
+         {
+             if (block) {
+                 block(buttonIdx);
+             }
+         }];
     }
-    
-    [alertView showWithBlock:^(NSInteger buttonIdx)
-     {
-         if (block) {
-             block(buttonIdx);
-         }
-     }];
 }
 
 
