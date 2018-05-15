@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LBXAlertAction"
-  s.version      = "1.0.7"
+  s.version      = "1.0.8"
   s.summary      = "alert sheet "
   s.homepage     = "https://github.com/MxABC/LBXAlertAction"
 
