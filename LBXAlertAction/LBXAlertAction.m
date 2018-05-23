@@ -15,10 +15,6 @@
 @implementation LBXAlertAction
 
 
-+ (BOOL)isIosVersion8AndAfter
-{  
-    return [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 ;
-}
 
 + (void)showAlertWithTitle:(NSString*)title msg:(NSString*)message buttonsStatement:(NSArray<NSString*>*)arrayItems chooseBlock:(void (^)(NSInteger buttonIdx))block
 {
@@ -96,7 +92,7 @@
   
     [argsArray addObjectsFromArray:otherButtonArray];
         
-    if ( [LBXAlertAction isIosVersion8AndAfter])
+    if ( @available(iOS 8,*) )
     {
         UIAlertController* alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
         for (int i = 0; i < [argsArray count]; i++)
@@ -117,7 +113,22 @@
             [alertController addAction:action];
         }
         
-        [[LBXAlertAction getTopViewController] presentViewController:alertController animated:YES completion:nil];
+        
+        UIViewController *curVC = [LBXAlertAction getTopViewController];
+        
+        if (curVC) {
+            
+            UIDevice *currentDevice = [UIDevice currentDevice];
+            // ipad
+            if (currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad &&
+                [alertController respondsToSelector:@selector(popoverPresentationController)]){
+                alertController.popoverPresentationController.sourceView = curVC.view; //必须加
+            }
+            [curVC presentViewController:alertController animated:YES completion:nil];
+            
+        }
+        
+      
         return;
     }
     
