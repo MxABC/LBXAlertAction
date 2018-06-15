@@ -22,7 +22,7 @@ swift:将AlertAction文件夹内所有文件拖入项目中即可
 
 ## 使用说明
 
-### UIAlertView形式示例
+### Alert形式示例
 
 ```obj-c
 
@@ -59,7 +59,7 @@ __weak __typeof(self) weakSelf = self;
 
 ```
 
-### UIActionSheet形式示例
+### Sheet形式示例
 
 ```obj-c
 __weak __typeof(self) weakSelf = self;
