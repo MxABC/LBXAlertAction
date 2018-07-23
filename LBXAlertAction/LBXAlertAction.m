@@ -39,7 +39,7 @@
             [alertController addAction:action];
         }
         
-        [[LBXAlertAction getTopViewController] presentViewController:alertController animated:YES completion:nil];
+        [[LBXAlertAction topViewController] presentViewController:alertController animated:YES completion:nil];
         
     }
     else{
@@ -64,13 +64,13 @@
 }
 
 
-+ (UIViewController*)getTopViewController
+
++ (UIViewController*)topViewController
 {
     UIWindow * window = [[UIApplication sharedApplication] keyWindow];
     
     return window.currentTopViewController;
 }
-
 
 
 + (void)showActionSheetWithTitle:(NSString*)title
@@ -114,7 +114,7 @@
         }
         
         
-        UIViewController *curVC = [LBXAlertAction getTopViewController];
+        UIViewController *curVC = [LBXAlertAction topViewController];
         
         if (curVC) {
             
@@ -133,7 +133,7 @@
     }
     
     //UIActionSheet
-    UIView *view = [self getTopViewController].view;
+    UIView *view = [self topViewController].view;
     UIActionSheet *sheet = nil;
     
     NSInteger count = argsArray.count;

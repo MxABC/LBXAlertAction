@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
 /**
@@ -14,6 +15,15 @@
          根据不同系统版本，对应选择，方便调用
  */
 @interface LBXAlertAction : NSObject
+
+
+
+/**
+ get window top UIViewController
+
+ @return top UIViewController ,nil if get fail
+ */
++ (UIViewController*)topViewController;
 
 /**
  *  模式对话框，选择一项（UIAlertView与与UIAlertController封装，根据不同ios版本对应选择调用方法）
