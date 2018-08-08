@@ -16,12 +16,12 @@
 		48AD5E9F1BF42DCD00999524 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48AD5E9D1BF42DCD00999524 /* LaunchScreen.storyboard */; };
 		48AD5EB31BF4314B00999524 /* LBXAlertAction.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 48AD5EB11BF4314B00999524 /* LBXAlertAction.podspec */; };
 		48AD5EB41BF4314B00999524 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 48AD5EB21BF4314B00999524 /* README.md */; };
-		48B609671C4C740000813C96 /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B609661C4C740000813C96 /* UIAlertController+supportedInterfaceOrientations.m */; };
 		739378971D179AA900023F2E /* UIAlertView+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 739378921D179AA900023F2E /* UIAlertView+LBXAlertAction.m */; };
 		7393789C1D179B1700023F2E /* LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7393789B1D179B1700023F2E /* LBXAlertAction.m */; };
 		73AB31061D52DD150047ED0E /* ModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AB31041D52DD150047ED0E /* ModelViewController.m */; };
 		73AB31071D52DD150047ED0E /* ModelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AB31051D52DD150047ED0E /* ModelViewController.xib */; };
 		73AB310A1D52E9030047ED0E /* UIWindow+LBXHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AB31091D52E9030047ED0E /* UIWindow+LBXHierarchy.m */; };
+		73F32A20211AEE84001205A8 /* UIAlertController+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F32A1F211AEE84001205A8 /* UIAlertController+LBXAlertAction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +39,6 @@
 		48AD5EA01BF42DCD00999524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48AD5EB11BF4314B00999524 /* LBXAlertAction.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LBXAlertAction.podspec; sourceTree = "<group>"; };
 		48AD5EB21BF4314B00999524 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		48B609651C4C740000813C96 /* UIAlertController+supportedInterfaceOrientations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+supportedInterfaceOrientations.h"; sourceTree = "<group>"; };
-		48B609661C4C740000813C96 /* UIAlertController+supportedInterfaceOrientations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+supportedInterfaceOrientations.m"; sourceTree = "<group>"; };
 		739378911D179AA900023F2E /* UIAlertView+LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+LBXAlertAction.h"; sourceTree = "<group>"; };
 		739378921D179AA900023F2E /* UIAlertView+LBXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+LBXAlertAction.m"; sourceTree = "<group>"; };
 		7393789A1D179B1700023F2E /* LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXAlertAction.h; sourceTree = "<group>"; };
@@ -50,6 +48,8 @@
 		73AB31051D52DD150047ED0E /* ModelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModelViewController.xib; sourceTree = "<group>"; };
 		73AB31081D52E9030047ED0E /* UIWindow+LBXHierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+LBXHierarchy.h"; sourceTree = "<group>"; };
 		73AB31091D52E9030047ED0E /* UIWindow+LBXHierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+LBXHierarchy.m"; sourceTree = "<group>"; };
+		73F32A1E211AEE84001205A8 /* UIAlertController+LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+LBXAlertAction.h"; sourceTree = "<group>"; };
+		73F32A1F211AEE84001205A8 /* UIAlertController+LBXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+LBXAlertAction.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,14 +76,14 @@
 		482EA74E1BF9D05A004AC1F5 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				73AB31081D52E9030047ED0E /* UIWindow+LBXHierarchy.h */,
-				73AB31091D52E9030047ED0E /* UIWindow+LBXHierarchy.m */,
-				739378911D179AA900023F2E /* UIAlertView+LBXAlertAction.h */,
-				739378921D179AA900023F2E /* UIAlertView+LBXAlertAction.m */,
-				48B609651C4C740000813C96 /* UIAlertController+supportedInterfaceOrientations.h */,
-				48B609661C4C740000813C96 /* UIAlertController+supportedInterfaceOrientations.m */,
 				482EA74F1BF9D05A004AC1F5 /* UIActionSheet+LBXAlertAction.h */,
 				482EA7501BF9D05A004AC1F5 /* UIActionSheet+LBXAlertAction.m */,
+				73F32A1E211AEE84001205A8 /* UIAlertController+LBXAlertAction.h */,
+				73F32A1F211AEE84001205A8 /* UIAlertController+LBXAlertAction.m */,
+				739378911D179AA900023F2E /* UIAlertView+LBXAlertAction.h */,
+				739378921D179AA900023F2E /* UIAlertView+LBXAlertAction.m */,
+				73AB31081D52E9030047ED0E /* UIWindow+LBXHierarchy.h */,
+				73AB31091D52E9030047ED0E /* UIWindow+LBXHierarchy.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -207,7 +207,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48B609671C4C740000813C96 /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				48AD5E971BF42DCD00999524 /* ViewController.m in Sources */,
 				48AD5E941BF42DCD00999524 /* AppDelegate.m in Sources */,
 				482EA7551BF9D05A004AC1F5 /* UIActionSheet+LBXAlertAction.m in Sources */,
@@ -217,6 +216,7 @@
 				48AD5EB41BF4314B00999524 /* README.md in Sources */,
 				739378971D179AA900023F2E /* UIAlertView+LBXAlertAction.m in Sources */,
 				48AD5E911BF42DCD00999524 /* main.m in Sources */,
+				73F32A20211AEE84001205A8 /* UIAlertController+LBXAlertAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
