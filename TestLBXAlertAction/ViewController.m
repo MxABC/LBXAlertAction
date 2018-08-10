@@ -69,7 +69,15 @@
     [self presentViewController:vc animated:YES completion:nil];
 }
 
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return  UIInterfaceOrientationMaskPortrait;
+}
 
 
 @end
