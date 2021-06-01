@@ -16,7 +16,7 @@ open class AlertAction: NSObject
      
      - returns: 最上层控制器
      */
-    open static func currentViewController() -> UIViewController? {
+    public static func currentViewController() -> UIViewController? {
         
         return UIApplication.shared.keyWindow?.currentTopViewController()
     }
@@ -30,14 +30,14 @@ open class AlertAction: NSObject
      - parameter btnStatements: 按钮，数组存储，第一个默认取消按钮
      - parameter closure:       用户点击闭包返回
      */
-    open static func showAlert( title:String,message:String,btnStatements:Array<String>,completion:((_ buttonIndex:Int)->Void)? )
+    public static func showAlert( title:String,message:String,btnStatements:Array<String>,completion:((_ buttonIndex:Int)->Void)? )
     {
         if #available(iOS 8.0, *)
         {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             for (index,item) in btnStatements.enumerated() {
                 
-                let style:UIAlertActionStyle = (index != 0) ? .default:.cancel
+                let style:UIAlertAction.Style = (index != 0) ? .default:.cancel
                 
                 let action = UIAlertAction(title: item, style: style, handler: { (action) in
                     
@@ -81,7 +81,7 @@ open class AlertAction: NSObject
      - parameter otherButtonTitles:      其他选项
      - parameter closure:                闭包返回用户点击结果
      */
-    open static func showSheet(title:String,message:String,destructiveButtonTitle:String?,cancelButtonTitle:String, otherButtonTitles:[String]?,completion: ( (_ buttonIdx:Int,_ itemTitle:String?) -> Void )? )
+    public static func showSheet(title:String,message:String,destructiveButtonTitle:String?,cancelButtonTitle:String, otherButtonTitles:[String]?,completion: ( (_ buttonIdx:Int,_ itemTitle:String?) -> Void )? )
     {
         if #available(iOS 8.0, *)
         {
